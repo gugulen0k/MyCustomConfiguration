@@ -1,14 +1,16 @@
-" Theme: equinusocio_material
- 
 call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
-  Plug 'yunlingz/equinusocio-material.vim'
   Plug 'preservim/nerdtree'
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'scrooloose/syntastic'
   Plug 'airblade/vim-gitgutter'
 
+  " Themes
+  Plug 'yous/vim-open-color'
+  Plug 'wojciechkepka/vim-github-dark'
+  Plug 'yunlingz/equinusocio-material.vim'
+  
   " Development extensions 
   Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-rails'
@@ -24,7 +26,7 @@ call plug#begin()
   Plug 'foosoft/vim-argwrap'
 call plug#end()
 
-" Merge linux and vim clipboard
+" Merge Linux and vim clipboard
 set clipboard^=unnamed,unnamedplus
 
 " Disable compatibility with vi which can cause unexpected issues.
@@ -77,7 +79,7 @@ set showmatch
 set hlsearch
 
 " Set spellcheck for English USA
-set spell spelllang=en_us 
+" set spell spelllang=en_us 
 
 " Make wildmenu behave like similar to Bash completion.
 set wildmode=list:longest
@@ -85,7 +87,6 @@ set wildmode=list:longest
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx 
-
 
 " Setting custom theme for vim
 " true colors are required for vim in terminal
@@ -95,17 +96,9 @@ set termguicolors
 let g:equinusocio_material_style = 'darker'
 
 set background=dark
-colorscheme equinusocio_material
-
-" Status line for GitGutter 
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
-
-set statusline+=%{GitStatus()}
+colorscheme open-color
 
 let g:argwrap_padded_braces = '{'
 
 nnoremap <C-p> :Files<CR>
-nnoremap 
+nnoremap <silent> \ :ArgWrap<CR>
