@@ -102,6 +102,10 @@ set termguicolors
 " Use a different style valid values: 'default', 'darker', 'pure'
 let g:equinusocio_material_style = 'darker'
 
+set tags+=.git/tags,.git/rubytags
+set tagcase=match
+noremap ,gt :!gentags<CR>
+
 set background=dark
 colorscheme open-color
 
@@ -116,4 +120,6 @@ nnoremap <silent> \ :ArgWrap<CR>
 nnoremap <leader>f :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>d :BTags<CR>
+nnoremap <leader><leader> :e #<CR>
+nnoremap '%%', "expand('%:h').'/'", { expr = true })
 
