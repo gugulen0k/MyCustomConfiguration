@@ -1,1 +1,1 @@
-# MyCustomVim
+# MyCustomConfiguration
