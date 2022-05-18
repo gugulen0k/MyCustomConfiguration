@@ -112,6 +112,7 @@ let g:argwrap_padded_braces = '{'
 
 nnoremap <C-p> :Files<CR>
 nnoremap <silent> \ :ArgWrap<CR>
-nnoremap <leader>b :Rg<CR>
+nnoremap <leader>f :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>d :BTags<CR>
 
