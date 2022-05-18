@@ -117,7 +117,7 @@ alias rc="rails console"
 alias rs="rails server"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
-alias tmux="vim ~/.tmux.conf"
+alias tmuxrc="vim ~/.tmux.conf"
 
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
         tmux attach -t default || tmux new -s default
