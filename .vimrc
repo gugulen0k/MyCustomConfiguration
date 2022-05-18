@@ -5,6 +5,7 @@ call plug#begin()
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'scrooloose/syntastic'
   Plug 'airblade/vim-gitgutter'
+  Plug 'BurntSushi/ripgrep'
 
   " Themes
   Plug 'yous/vim-open-color'
@@ -12,19 +13,23 @@ call plug#begin()
   Plug 'yunlingz/equinusocio-material.vim'
   
   " Development extensions 
-  Plug 'jiangmiao/auto-pairs'
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-endwise'
   Plug 'tpope/vim-eunuch'
   Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-haml'
   Plug 'tpope/vim-unimpaired'
+  Plug 'kchmck/vim-coffee-script'
   Plug 'yggdroot/indentline'
   Plug 'jszakmeister/vim-togglecursor'
   Plug 'godlygeek/tabular'
   Plug 'foosoft/vim-argwrap'
+  Plug 'jiangmiao/auto-pairs'
 call plug#end()
+
+let mapleader = " "
 
 " Merge Linux and vim clipboard
 set clipboard^=unnamed,unnamedplus
@@ -46,6 +51,7 @@ syntax on
 
 " Add numbers to each line on the left-hand side.
 set relativenumber 
+set number
 
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
@@ -98,7 +104,14 @@ let g:equinusocio_material_style = 'darker'
 set background=dark
 colorscheme open-color
 
+" Setting ripgrep for vim
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+
 let g:argwrap_padded_braces = '{'
 
 nnoremap <C-p> :Files<CR>
 nnoremap <silent> \ :ArgWrap<CR>
+nnoremap <leader>b :Rg<CR>
+nnoremap <leader>d :BTags<CR>
+
