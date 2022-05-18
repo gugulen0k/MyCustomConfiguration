@@ -1,4 +1,4 @@
-" Background color for terminal
+" Background color for terminal #212529
 call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
