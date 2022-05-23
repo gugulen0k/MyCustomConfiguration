@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -78,9 +78,10 @@ plugins=(
         bundler 
         ruby 
         rake 
-        zsh-autosuggestions
         web-search          # Adds aliases for searching with Google, Wiki, Bing, YouTube and other popular services
         copypath            # Copies the path of given directory or file to the system clipboard.
+        colored-man-pages
+        colorize
 )
 
 source $ZSH/oh-my-zsh.sh

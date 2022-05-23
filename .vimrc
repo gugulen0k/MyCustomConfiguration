@@ -4,8 +4,6 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdtree'
   Plug 'christoomey/vim-tmux-navigator'
-  Plug 'scrooloose/syntastic'
-  Plug 'airblade/vim-gitgutter'
   Plug 'BurntSushi/ripgrep'
 
   " Themes
@@ -22,12 +20,11 @@ call plug#begin()
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-haml'
   Plug 'tpope/vim-unimpaired'
+  Plug 'thoughtbot/vim-rspec'
   Plug 'kchmck/vim-coffee-script'
   Plug 'yggdroot/indentline'
   Plug 'jszakmeister/vim-togglecursor'
-  Plug 'godlygeek/tabular'
   Plug 'foosoft/vim-argwrap'
-  Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 let mapleader = " "
@@ -122,4 +119,10 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>d :BTags<CR>
 nnoremap <leader><leader> :e #<CR>
 nnoremap '%%', "expand('%:h').'/'", { expr = true })
+
+" RSpec.vim mappings
+map <leader>t :call RunCurrentSpecFile()<CR>
+map <leader>s :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
 
