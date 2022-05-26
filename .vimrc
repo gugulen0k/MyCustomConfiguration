@@ -25,6 +25,7 @@ call plug#begin()
   Plug 'yggdroot/indentline'
   Plug 'jszakmeister/vim-togglecursor'
   Plug 'foosoft/vim-argwrap'
+  Plug 'vim-scripts/copypath.vim'
 call plug#end()
 
 let mapleader = " "
@@ -53,6 +54,7 @@ set number
 
 " Highlight cursor line underneath the cursor horizontally.
 set cursorline
+set cursorcolumn
 
 " Set tab width to 2 spaces.
 set tabstop=2
@@ -96,6 +98,14 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " true colors are required for vim in terminal
 set termguicolors
 
+" Enables scrolling
+set mouse=a
+
+" Indent for coffeescript files
+let coffee_indent_keep_current = 2
+
+let g:copypath_copy_to_unnamed_register = 1
+
 " Use a different style valid values: 'default', 'darker', 'pure'
 let g:equinusocio_material_style = 'darker'
 
@@ -118,7 +128,7 @@ nnoremap <leader>f :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>d :BTags<CR>
 nnoremap <leader><leader> :e #<CR>
-nnoremap '%%', "expand('%:h').'/'", { expr = true })
+nnoremap '%%', expand('%:h').'/'
 
 " RSpec.vim mappings
 map <leader>t :call RunCurrentSpecFile()<CR>
