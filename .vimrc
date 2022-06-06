@@ -1,4 +1,7 @@
-" Background color for terminal #212529
+" Background color for terminal 
+" Light: #f8f9fa
+" Dark:  #212529
+
 call plug#begin()
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -59,6 +62,9 @@ set cursorcolumn
 " Set tab width to 2 spaces.
 set tabstop=2
 
+" Set indent to 2 spaces.
+set shiftwidth=2
+
 " Use space characters instead of tabs.
 set expandtab
 
@@ -113,7 +119,7 @@ set tags+=.git/tags,.git/rubytags
 set tagcase=match
 noremap ,gt :!gentags<CR>
 
-set background=dark
+set background=light
 colorscheme open-color
 
 " Setting ripgrep for vim
@@ -129,6 +135,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>d :BTags<CR>
 nnoremap <leader><leader> :e #<CR>
 nnoremap '%%', expand('%:h').'/'
+nnoremap <leader>c :CopyPath<CR>
 
 " RSpec.vim mappings
 map <leader>t :call RunCurrentSpecFile()<CR>
