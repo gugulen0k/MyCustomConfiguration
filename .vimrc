@@ -39,6 +39,9 @@ set clipboard^=unnamed,unnamedplus
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 
+" Disable generating swap files
+set noswapfile
+
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
 
